@@ -11520,6 +11520,11 @@ body {
   }
 
   #mainNav .navbar-brand:hover {
+    color: rgb(255 255 255 / 90%);
+    /* color: #ff9076; */
+  }
+
+  #mainNav.navbar-shrink .navbar-brand:hover {
     color: #ff9076;
   }
 
@@ -11618,12 +11623,13 @@ body {
 }
 
 .idvisual-section {
-  padding-top: 10rem;
+  padding-top: 1rem;
   /* background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%); */
   background-color: #f9f6f4;
 }
 .idvisual-section p {
   margin-bottom: 2rem;
+  font-size: 14px;
 }
 
 .pacotes-section {
