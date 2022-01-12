@@ -1,0 +1,55 @@
+video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;  
+}
+.apresentacao{
+    z-index: 2;
+    margin:0 auto;
+}
+.text-cinza-1{
+    color: #474747;
+}
+.text-cinza-2{
+    color: #727070;
+}
+.text-cinza-3{
+    color: #a3a3a3;
+}
+.destaque{
+    font-weight: 700;
+    color: #FFA08A;
+}
+@media (max-width: 576px) {
+    #imgApresentacao {
+        width: 80%;
+    }
+}
+
+@media (min-width: 576px) {
+   
+    #imgApresentacao {
+        width: 70%;
+    }
+}
+@media (min-width: 768px) {
+    #imgApresentacao {
+        width: 60%;
+    }
+    
+}
+@media (min-width: 992px) {
+    
+    #imgApresentacao {
+        width: 40%;
+    }
+ 
+}
+@media (min-width: 1200px) {
+    #imgApresentacao {
+        width: 30%;
+    }
+}
+@media (min-width: 1400px) {    
+}
