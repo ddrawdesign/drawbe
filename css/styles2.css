@@ -1,4 +1,8 @@
-video{
+::-webkit-scrollbar-thumb {
+    background: #FFA08A;
+}
+
+#video video{
     position: absolute;
     top: 0;
     left: 0;
@@ -43,6 +47,14 @@ video{
     
     #imgApresentacao {
         width: 40%;
+    }
+    ::-webkit-scrollbar {
+        width:10px;
+        height: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 2px;
     }
  
 }
