@@ -8,6 +8,9 @@
     left: 0;
     z-index: -1;  
 }
+#pacotes{
+    background-color: #fff;
+}
 .apresentacao{
     z-index: 2;
     margin:0 auto;
@@ -21,9 +24,32 @@
 .text-cinza-3{
     color: #a3a3a3;
 }
+.text-size-14{
+    font-size: 14px;
+}
+
 .destaque{
     font-weight: 700;
     color: #FFA08A;
+}
+.pacotes-section ul {
+    list-style: none;
+    padding-left: 1rem;    
+}
+
+.pacotes-section ul li::before {
+    content: "\2022";
+    color: #ff9076;
+    font-weight: bolder;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1.3em;
+  }
+.btn-compra{
+    background-color: #ff9076;    
+}
+.btn-compra:hover{
+    background-color: #FFA08A;
 }
 @media (max-width: 576px) {
     #imgApresentacao {
