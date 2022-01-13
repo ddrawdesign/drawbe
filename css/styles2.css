@@ -2,6 +2,10 @@
     background: #FFA08A;
 }
 
+.cor-text-idvisual{
+    color: #FFA08A;
+}
+
 #video video{
     position: absolute;
     top: 0;
@@ -32,6 +36,10 @@
     font-weight: 700;
     color: #FFA08A;
 }
+.fundo-branco{
+    background-color: #fff;
+}
+
 .pacotes-section ul {
     list-style: none;
     padding-left: 1rem;    
@@ -51,6 +59,8 @@
 .btn-compra:hover{
     background-color: #FFA08A;
 }
+
+
 @media (max-width: 576px) {
     #imgApresentacao {
         width: 80%;
