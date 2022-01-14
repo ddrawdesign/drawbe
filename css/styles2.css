@@ -42,12 +42,13 @@
 .pacote-arte{    
     padding: 1em;
 }
-.pacote-arte img{    
+.borda-circle-img{    
     border-radius: 50%;
-    border-width: 0.5rem;
+    border-width: 0.3em;
     border-color: #ff9f8a80;
     border-style: solid;
 }
+
 .pacotes-section ul {
     list-style: none;
     padding-left: 1rem;    
@@ -72,6 +73,9 @@
 @media (max-width: 576px) {
     #imgApresentacao {
         width: 80%;
+    }
+    .borda-circle-img{    
+        border-width: 0.1em;
     }
 }
 
