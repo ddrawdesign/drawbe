@@ -39,7 +39,15 @@
 .fundo-branco{
     background-color: #fff;
 }
-
+.pacote-arte{    
+    padding: 1em;
+}
+.pacote-arte img{    
+    border-radius: 50%;
+    border-width: 0.5rem;
+    border-color: #ff9f8a80;
+    border-style: solid;
+}
 .pacotes-section ul {
     list-style: none;
     padding-left: 1rem;    

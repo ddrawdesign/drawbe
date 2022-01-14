@@ -11631,18 +11631,14 @@ body {
 .idvisual-section p {
   margin-bottom: 1rem;
 }
-
 .pacotes-section p {
   margin-bottom: 1rem;
 }
-
-
-
 .pacotes-section {
   padding: 1rem 0 10rem;
 }
 .redes-section {
-  padding: 10rem 0;
+  padding: 1rem 0 10rem;
 }
 
 .pacotes-section .featured-text {
