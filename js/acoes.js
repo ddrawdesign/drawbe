@@ -15,15 +15,29 @@ const listaOpcionaisPacotesIdVisual = [
     {'id': 9, 'nome': 'Arte Flyer, Cartaz ou Banner'                   , 'valor': 50},
     {'id': 10, 'nome': '5 Capas Destaques'                              , 'valor': 30},
     {'id': 11, 'nome': '10 Capas Destaques'                             , 'valor': 60},
-    {'id': 12, 'nome': 'Template Post Instagram (cada)'                 , 'valor': 10, 'cada':''},
-    {'id': 13, 'nome': 'Arte Post Instagram (cada)'                     , 'valor': 15, 'cada':''},
+    {'id': 12, 'nome': 'Template Post Instagram (cada)'                 , 'valor': 10, 'multiplos': true},
+    {'id': 13, 'nome': 'Arte Post Instagram (cada)'                     , 'valor': 15, 'multiplos': true},
 ];
 
 
 function lerQuantidade(elemento){
-    if(elemento.checked){
-        let sign = prompt("Quantidade?");
-    }    
+    let quant = 1;
+
+    if(elemento.checked){  
+        do
+        {
+            quant = prompt("Quantidade?");
+            quant = Number.parseInt(quant);
+            if(Number.isNaN(quant)){
+                var retorno = confirm("Escreva apenas números");
+                if (!retorno){
+                    quant = 1;
+                    break;
+                }                
+            }
+        }while(Number.isNaN(quant))
+    }
+    return quant;
 }
 
 function addOpcionalACompra(element, item, quant = 1){
@@ -48,21 +62,47 @@ function exibirValorTotal(){
 function exibirPacoteIdvisualEscolhido(pacote, valor){
     compra.pacote = {'nome': pacote, 'valor': valor}
     modalCompraIdVisualLabel.innerHTML = `${compra.pacote.nome} - (R$${compra.pacote.valor})`;
-    $('#ValorTotalIdVisual').append(valor);
+    compra.opcional = [];
+    $('#ValorTotalIdVisual').html(compra.pacote.valor);
+
+    var dados = '';
 
     listaOpcionaisPacotesIdVisual.forEach(opcional =>{
-        $("#listaOpcionaisPacotesIdVisual").append(`
-        <label class="list-group-item d-flex justify-content-between align-items-center text-cinza-2 text-size-14">
+        
+        dados += `<label class="list-group-item d-flex justify-content-between align-items-center text-cinza-2 text-size-14">
             <div>
-                <input class="form-check-input me-1" type="checkbox" value="" onchange="addOpcionalACompra(this, ${opcional.id})">
+                <input class="form-check-input me-1" type="checkbox" value="" onchange="addOpcionalACompra(this, ${opcional.id}${opcional.multiplos?', lerQuantidade(this)':''})">
                 ${opcional.nome}
             </div>
             <span class="badge bg-primary rounded-pill">R$${opcional.valor}</span>
         </label>
-        `);    
+        `;    
     });
 
+    //${opcional.multiplos?`lerQuantidade(${opcional.id});`:''}
+
+    $("#listaOpcionaisPacotesIdVisual").html(dados);
+
 }
+
+function finalizarCompra(){   
+    var text = `Pacote escolhido: ${compra.pacote.nome} - R$${compra.pacote.valor}; \n`;
+    text += `Opcionais incluidos: \n`
+    compra.opcional.forEach(item => {text +=  `* (${item.quant +' '+ item.nome}, valor R$${parseFloat(item.quant) * parseFloat(item.valor)}); \n`});
+    text += `Valor total: R$${compra.valorTotal}`;
+    var url = 'https://api.whatsapp.com/send?phone=5511950509303';
+    text = window.encodeURIComponent(text);
+    // url += `&text=${text}`;
+    // window.location.replace(url);
+
+    window.open("https://api.whatsapp.com/send?phone=5511950509303" + "&text=" + text, "_blank");
+}
+
+function enviarMsgWhatsApp(text){
+    var text = window.encodeURIComponent(text);
+    window.open("https://api.whatsapp.com/send?phone=5511950509303" + "&text=" + text, "_blank");
+}
+
 
 function sizeOfThings(){
     var windowWidth = window.innerWidth;
