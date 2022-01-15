@@ -87,15 +87,14 @@ function exibirPacoteIdvisualEscolhido(pacote, valor){
 
 function finalizarCompra(){   
     var text = `Pacote escolhido: ${compra.pacote.nome} - R$${compra.pacote.valor}; \n`;
-    text += `Opcionais incluidos: \n`
-    compra.opcional.forEach(item => {text +=  `* (${item.quant +' '+ item.nome}, valor R$${parseFloat(item.quant) * parseFloat(item.valor)}); \n`});
-    text += `Valor total: R$${compra.valorTotal}`;
+    if(compra.opcional.length > 0){
+        text += `Opcionais incluidos: \n`
+        compra.opcional.forEach(item => {text +=  `* (${item.quant +' '+ item.nome}, valor R$${parseFloat(item.quant) * parseFloat(item.valor)}); \n`});
+        text += `Valor total: R$${compra.valorTotal}`;
+    }
     var url = 'https://api.whatsapp.com/send?phone=5511950509303';
     text = window.encodeURIComponent(text);
-    // url += `&text=${text}`;
-    // window.location.replace(url);
-
-    window.open("https://api.whatsapp.com/send?phone=5511950509303" + "&text=" + text, "_blank");
+    window.open(`${url}&text=${text}`, "_blank");
 }
 
 function enviarMsgWhatsApp(text){
