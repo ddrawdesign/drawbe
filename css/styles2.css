@@ -1,3 +1,14 @@
+.testeImg{
+    background: url('../assets/img/1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.testeImg:hover{
+    background: radial-gradient(circle, rgba(173,173,173,0.3) 0%, rgba(255,255,255,0.3) 100%), url('../assets/img/1.jpg');    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 ::-webkit-scrollbar-thumb {
     background: #FFA08A;
 }
