@@ -254,7 +254,7 @@ Início PROJETOS */
         listOfProjects.forEach(project => {
 
             $("#capaProjetos").append(
-                `<div class="col-12 col-sm-6 col-md-4 col-lg-3 g-0 g-sm-2">
+                `<div class="col-6 col-sm-4 col-md-3 g-1 g-sm-2">
                     <a href="#" data-bs-toggle="modal" data-bs-target="#exibicaoPortfolio" onclick="detailProject('${project.dirName}')">
                         <div class="card text-white capaPortfolio border-0">
                             <img src="assets/img/projetos/${project.dirName}/${project.capa}"  alt="...">

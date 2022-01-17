@@ -11732,12 +11732,12 @@ body {
 }
 .contact-section .social a {
   text-align: center;
-  height: 3rem;
-  width: 3rem;
-  background: rgba(255, 255, 255, 0.1);
+  height: 5rem;
+  width: 5rem;
+  background: #FFA08A;
   border-radius: 100%;
-  line-height: 3rem;
-  color: rgba(255, 255, 255, 0.3);
+  line-height: 6.6rem;
+  color: white;
 }
 .contact-section .social a:hover {
   color: rgba(255, 255, 255, 0.5);
