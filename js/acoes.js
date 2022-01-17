@@ -132,3 +132,174 @@ function sizeOfThings(){
       sizeOfThings();
   });
 
+/* ***********************************************************************
+Início PROJETOS */
+
+// Listando imagens de capa para os projetos (portfólios)
+    const listOfProjects = [
+        {'projectName':'Beauté','dirName': 'BEAUTE','capa':'capa.jpg', 'images':[                
+                {'name':'1.jpg'     , 'fullScreen':false},
+                {'name':'2.jpg'     , 'fullScreen':false},
+                {'name':'3.jpg'     , 'fullScreen':true},
+                {'name':'4.jpg'     , 'fullScreen':false},
+                {'name':'5.jpg'     , 'fullScreen':false},
+                {'name':'6.jpg'     , 'fullScreen':false},
+                {'name':'7.jpg'     , 'fullScreen':false},
+                {'name':'8.jpg'     , 'fullScreen':true},
+            ]
+        },
+        {'projectName':'Sísi Biquínis','dirName': 'SISI','capa':'capa.jpg', 'images':[                
+                {'name':'1.jpg'     , 'fullScreen':false},
+                {'name':'2.jpg'     , 'fullScreen':false},
+                {'name':'3.jpg'     , 'fullScreen':true},
+                {'name':'4.jpg'     , 'fullScreen':false},
+                {'name':'5.jpg'     , 'fullScreen':false},
+                {'name':'6.jpg'     , 'fullScreen':false},
+                {'name':'7.jpg'     , 'fullScreen':false},
+                {'name':'8.jpg'     , 'fullScreen':true},
+            ]
+        },
+        {'projectName':'Carolla','dirName': 'CAROLLA','capa':'capa.jpg', 'images':[                
+                {'name':'1.jpg'     , 'fullScreen':false},
+                {'name':'2.jpg'     , 'fullScreen':false},
+                {'name':'3.jpg'     , 'fullScreen':true},
+                {'name':'4.jpg'     , 'fullScreen':false},
+                {'name':'5.jpg'     , 'fullScreen':false},
+                {'name':'6.jpg'     , 'fullScreen':false},
+                {'name':'7.jpg'     , 'fullScreen':false},
+                {'name':'8.jpg'     , 'fullScreen':true},
+            ]
+        },
+        {'projectName':'Ella','dirName': 'ELLA','capa':'capa.jpg', 'images':[                
+                {'name':'1.jpg'     , 'fullScreen':false},
+                {'name':'2.jpg'     , 'fullScreen':false},
+                {'name':'3.jpg'     , 'fullScreen':true},
+                {'name':'4.jpg'     , 'fullScreen':false},
+                {'name':'5.jpg'     , 'fullScreen':false},
+                {'name':'6.jpg'     , 'fullScreen':false},
+                {'name':'7.jpg'     , 'fullScreen':false},
+                {'name':'8.jpg'     , 'fullScreen':true},
+            ]
+        },
+        {'projectName':'Eva','dirName': 'EVA','capa':'capa.jpg', 'images':[                
+                {'name':'1.jpg'     , 'fullScreen':false},
+                {'name':'2.jpg'     , 'fullScreen':false},
+                {'name':'3.jpg'     , 'fullScreen':true},
+                {'name':'4.jpg'     , 'fullScreen':false},
+                {'name':'5.jpg'     , 'fullScreen':false},
+                {'name':'6.jpg'     , 'fullScreen':false},
+                {'name':'7.jpg'     , 'fullScreen':false},
+                {'name':'8.jpg'     , 'fullScreen':true},
+            ]
+        },
+        {'projectName':'Ferreira Farias','dirName': 'FERREIRA','capa':'capa.jpg', 'images':[                
+                {'name':'1.jpg'     , 'fullScreen':false},
+                {'name':'2.jpg'     , 'fullScreen':false},
+                {'name':'3.jpg'     , 'fullScreen':true},
+                {'name':'4.jpg'     , 'fullScreen':false},
+                {'name':'5.jpg'     , 'fullScreen':false},
+                {'name':'6.jpg'     , 'fullScreen':false},
+                {'name':'7.jpg'     , 'fullScreen':false},
+                {'name':'8.jpg'     , 'fullScreen':true},
+            ]
+        },
+        {'projectName':'La Nêta','dirName': 'LANETA','capa':'capa.jpg', 'images':[                
+                {'name':'1.jpg'     , 'fullScreen':false},
+                {'name':'2.jpg'     , 'fullScreen':false},
+                {'name':'3.jpg'     , 'fullScreen':true},
+                {'name':'4.jpg'     , 'fullScreen':false},
+                {'name':'5.jpg'     , 'fullScreen':false},
+                {'name':'6.jpg'     , 'fullScreen':false},
+                {'name':'7.jpg'     , 'fullScreen':false},
+                {'name':'8.jpg'     , 'fullScreen':true},
+            ]
+        },
+        {'projectName':'Maída Vieira','dirName': 'MAIDA','capa':'capa.jpg', 'images':[                
+                {'name':'1.jpg'     , 'fullScreen':false},
+                {'name':'2.jpg'     , 'fullScreen':false},
+                {'name':'3.jpg'     , 'fullScreen':true},
+                {'name':'4.jpg'     , 'fullScreen':false},
+                {'name':'5.jpg'     , 'fullScreen':false},
+                {'name':'6.jpg'     , 'fullScreen':false},
+                {'name':'7.jpg'     , 'fullScreen':false},
+                {'name':'8.jpg'     , 'fullScreen':true},
+            ]
+        },
+        {'projectName':'Odontoflor','dirName': 'ODONTO','capa':'capa.jpg', 'images':[                
+                {'name':'1.jpg'     , 'fullScreen':false},
+                {'name':'2.jpg'     , 'fullScreen':false},
+                {'name':'3.jpg'     , 'fullScreen':true},
+                {'name':'4.jpg'     , 'fullScreen':false},
+                {'name':'5.jpg'     , 'fullScreen':false},
+                {'name':'6.jpg'     , 'fullScreen':false},
+                {'name':'7.jpg'     , 'fullScreen':false},
+                {'name':'8.jpg'     , 'fullScreen':true},
+            ]
+        },
+        {'projectName':'Simone Andrade','dirName': 'SIMONE','capa':'capa.jpg', 'images':[                
+                {'name':'1.jpg'     , 'fullScreen':false},
+                {'name':'2.jpg'     , 'fullScreen':false},
+                {'name':'3.jpg'     , 'fullScreen':true},
+                {'name':'4.jpg'     , 'fullScreen':false},
+                {'name':'5.jpg'     , 'fullScreen':false},
+                {'name':'6.jpg'     , 'fullScreen':false},
+                {'name':'7.jpg'     , 'fullScreen':false},
+                {'name':'8.jpg'     , 'fullScreen':true},
+            ]
+        }
+    ];
+
+    //função para listar os projetos
+    function listProjects(){
+        listOfProjects.forEach(project => {
+
+            $("#capaProjetos").append(
+                `<div class="col-12 col-sm-6 col-md-4 col-lg-3 g-0 g-sm-2">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exibicaoPortfolio" onclick="detailProject('${project.dirName}')">
+                        <div class="card text-white capaPortfolio border-0">
+                            <img src="assets/img/projetos/${project.dirName}/${project.capa}"  alt="...">
+                            <div class="card-img-overlay imgEfeitoPortfolio">
+                                <p class="text-size-14">${project.projectName}</p>                      
+                            </div>                        
+                        </div>
+                    </a>                  
+                </div>`
+            );
+        });
+    }
+    listProjects();
+    //buncar projeto por nome do diretório
+    function getProjectByDirName(dirName){
+        let p;
+        listOfProjects.forEach(project => {            
+            if(project.dirName == dirName){
+                p = project;              
+            }
+        });
+        return p;
+    }
+
+    //Exbindo detalhes de projetos
+    function detailProject(dirName){
+        let project = getProjectByDirName(dirName);
+        let htmlDetails = '';
+        project.images.forEach(img =>{
+            htmlDetails += `<div class="${img.fullScreen?'col-12':'col-6'} px-0">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#exibicaoDetalhesPortfolio" onclick="imageDetailProjectZoon(this,'${project.projectName}')" >
+                    <img src="assets/img/projetos/${dirName}/${img.name}" class="img-fluid" alt="...">
+                </a>
+            </div>`;
+        });
+        $('#projectDetails').html(htmlDetails);
+        $('#modalexibicaoPortfolio').html(project.projectName);
+    }
+
+    //Exbir imagem dos detalhes do projeto em tela cheia
+
+    function imageDetailProjectZoon(element, projectName){
+        $('#imageZoon').attr('src',$(element).children().attr('src'))
+        $('#modalexibicaoDetalhesPortfolio').html(projectName);
+    }
+
+/*Fim PROJETOS
+**************************************************************************/

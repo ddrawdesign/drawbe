@@ -500,20 +500,22 @@
             <h4 class="mb-4 cor-text-idvisual">Nossos Projetos</h4>
         </div>
         <div class="container-fluid px-0 px-lg-5">
-            <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+            <div class="row gx-0 mb-5 mb-lg-0 justify-content-center" id="capaProjetos">
                 
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 g-0 g-sm-2">
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#exibicaoPortfolio">
-                        <div class="card text-white capaPortfolio">
+                <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3 g-0 g-sm-2">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exibicaoPortfolio" onclick="detailProject('SISI')">
+                        <div class="card text-white capaPortfolio border-0">
                             <img src="assets/img/projetos/BEAUTE/capa.jpg"  alt="...">
                             <div class="card-img-overlay imgEfeitoPortfolio">
                                 <p class="text-size-14">Beautê</p>                      
                             </div>                        
                         </div>
                     </a>                  
-                </div>
+                </div> -->
                 
-
+                <!-- Projects here -->
+                 
+                 <!-- ************* -->
             </div>            
         </div>
     </section>
@@ -648,45 +650,30 @@
     <div class="modal fade" id="exibicaoPortfolio" tabindex="-1" aria-labelledby="modalexibicaoPortfolio" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title cor-text-idvisual" id="modalexibicaoPortfolio">Beautê</h5>
+                <div class="modal-header py-2">
+                    <h5 class="modal-title cor-text-idvisual" id="modalexibicaoPortfolio"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0">
-                    <div class="row">
-                        <div class="col-6 px-0">
-                            <img src="assets/img/projetos/BEAUTE/1.jpg" class="img-fluid" alt="...">
-                        </div>
-                        <div class="col-6 px-0">
-                            <img src="assets/img/projetos/BEAUTE/2.jpg" class="img-fluid" alt="...">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 px-0">
-                            <img src="assets/img/projetos/BEAUTE/3.jpg" class="img-fluid" alt="...">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6 px-0">
-                            <img src="assets/img/projetos/BEAUTE/4.jpg" class="img-fluid" alt="...">
-                        </div>
-                        <div class="col-6 px-0">
-                            <img src="assets/img/projetos/BEAUTE/5.jpg" class="img-fluid" alt="...">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6 px-0">
-                            <img src="assets/img/projetos/BEAUTE/6.jpg" class="img-fluid" alt="...">
-                        </div>
-                        <div class="col-6 px-0">
-                            <img src="assets/img/projetos/BEAUTE/7.jpg" class="img-fluid" alt="...">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 px-0">
-                            <img src="assets/img/projetos/BEAUTE/8.jpg" class="img-fluid" alt="...">
-                        </div>
+                    <div class="row" id="projectDetails">
+                        <!-- Image details project-->
+                        <!--  -->
                     </div>                    
+                </div> 
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Exbição detalhes do portfólio -->
+    <div class="modal fade" id="exibicaoDetalhesPortfolio" tabindex="-1" aria-labelledby="modalexibicaoDetalhesPortfolio" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header py-2">
+                    <h5 class="modal-title cor-text-idvisual" id="modalexibicaoDetalhesPortfolio"></h5>
+                    <button type="button" class="btn-close" data-bs-target="#exibicaoPortfolio" data-bs-toggle="modal" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body  p-0 text-center">
+                    <img src="" class="img-fluid" alt="..." id="imageZoon">
                 </div> 
             </div>
         </div>
