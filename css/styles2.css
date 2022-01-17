@@ -1,14 +1,36 @@
 .testeImg{
     background: url('../assets/img/1.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 }
 
 .testeImg:hover{
     background: radial-gradient(circle, rgba(173,173,173,0.3) 0%, rgba(255,255,255,0.3) 100%), url('../assets/img/1.jpg');    
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 }
+
+.capaPortfolio{
+    position: relative;
+}
+
+.imgEfeitoPortfolio{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.imgEfeitoPortfolio:hover{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.315);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 ::-webkit-scrollbar-thumb {
     background: #FFA08A;
 }
