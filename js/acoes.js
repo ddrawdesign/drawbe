@@ -1,140 +1,347 @@
-var modalCompraIdVisualLabel =  document.getElementById('modalCompraIdVisualLabel');
-var compra = [];
-compra.opcional = [];
-
-const listaOpcionaisPacotesIdVisual = [
-    {'id': 0, 'nome': 'Arte Cartão de Visita Físico'                    , 'valor': 45},
-    {'id': 1, 'nome': 'Cartão de Visita Digital'                        , 'valor': 55},
-    {'id': 2, 'nome': 'Arte Envelope A4'                                , 'valor': 50},
-    {'id': 3, 'nome': 'Arte Envelope Ofício'                            , 'valor': 60},
-    {'id': 4, 'nome': 'Arte Papel Timbrado/Receituário'                 , 'valor': 50},
-    {'id': 5, 'nome': 'Arte para Tag ou Etiqueta'                       , 'valor': 35},
-    {'id': 6, 'nome': 'Arte para Pasta'                                 , 'valor': 45},
-    {'id': 7, 'nome': 'Arte Ficha Anamnese (página única)'              , 'valor': 50},
-    {'id': 8, 'nome': 'Arte Ficha Anamnese Dupla (capa + 2 páginas)'    , 'valor': 95},
-    {'id': 9, 'nome': 'Arte Flyer, Cartaz ou Banner'                   , 'valor': 50},
-    {'id': 10, 'nome': '5 Capas Destaques'                              , 'valor': 30},
-    {'id': 11, 'nome': '10 Capas Destaques'                             , 'valor': 60},
-    {'id': 12, 'nome': 'Template Post Instagram (cada)'                 , 'valor': 10, 'multiplos': true},
-    {'id': 13, 'nome': 'Arte Post Instagram (cada)'                     , 'valor': 15, 'multiplos': true},
-];
-
-
-function lerQuantidade(elemento){
-    let quant = 1;
-
-    if(elemento.checked){  
-        do
+/*************************************************************************
+Adicionando vídeo de exibição ao cabeçalho do site*/
+    function sizeOfThings(){        
+        let screenWidth = screen.width;
+        let video;
+        if(screenWidth > 1200){
+            video = 'assets/videos/video_drawbe.mp4';}
+        else
         {
-            quant = prompt("Quantidade?");
-            quant = Number.parseInt(quant);
-            if(Number.isNaN(quant)){
-                var retorno = confirm("Escreva apenas números");
-                if (!retorno){
-                    quant = 1;
-                    break;
-                }                
+            if(screenWidth > 992){
+                video = 'assets/videos/video_drawbe_tablet.mp4';
             }
-        }while(Number.isNaN(quant))
-    }
-    return quant;
-}
-
-function addOpcionalACompra(element, item, quant = 1){
-    if(element.checked){
-        compra.opcional[item] = {'nome': listaOpcionaisPacotesIdVisual[item].nome, 'valor': listaOpcionaisPacotesIdVisual[item].valor, 'quant':quant}
-    }else{
-        delete compra.opcional[item];
-    }    
-    exibirValorTotal();
-}
-
-function calcValorCompra(){
-    compra.valorTotal = parseFloat(compra.pacote.valor);
-    compra.opcional.forEach(item => {compra.valorTotal += (parseFloat(item.valor) * parseFloat(item.quant))});
-}
-
-function exibirValorTotal(){
-    calcValorCompra();
-    $('#ValorTotalIdVisual').text('R$'+ compra.valorTotal);
-}
-
-function exibirPacoteIdvisualEscolhido(pacote, valor){
-    compra.pacote = {'nome': pacote, 'valor': valor}
-    modalCompraIdVisualLabel.innerHTML = `${compra.pacote.nome} - (R$${compra.pacote.valor})`;
-    compra.opcional = [];
-    $('#ValorTotalIdVisual').html(compra.pacote.valor);
-
-    var dados = '';
-
-    listaOpcionaisPacotesIdVisual.forEach(opcional =>{
-        
-        dados += `<label class="list-group-item d-flex justify-content-between align-items-center text-cinza-2 text-size-14">
-            <div>
-                <input class="form-check-input me-1" type="checkbox" value="" onchange="addOpcionalACompra(this, ${opcional.id}${opcional.multiplos?', lerQuantidade(this)':''})">
-                ${opcional.nome}
-            </div>
-            <span class="badge bg-primary rounded-pill">R$${opcional.valor}</span>
-        </label>
-        `;    
-    });
-
-    //${opcional.multiplos?`lerQuantidade(${opcional.id});`:''}
-
-    $("#listaOpcionaisPacotesIdVisual").html(dados);
-
-}
-
-function finalizarCompra(){   
-    var text = `Pacote escolhido: ${compra.pacote.nome} - R$${compra.pacote.valor}; \n`;
-    if(compra.opcional.length > 0){
-        text += `Opcionais incluidos: \n`
-        compra.opcional.forEach(item => {text +=  `* (${item.quant +' '+ item.nome}, valor R$${parseFloat(item.quant) * parseFloat(item.valor)}); \n`});
-        text += `Valor total: R$${compra.valorTotal}`;
-    }
-    var url = 'https://api.whatsapp.com/send?phone=5511950509303';
-    text = window.encodeURIComponent(text);
-    window.open(`${url}&text=${text}`, "_blank");
-}
-
-function enviarMsgWhatsApp(text){
-    var text = window.encodeURIComponent(text);
-    window.open("https://api.whatsapp.com/send?phone=5511950509303" + "&text=" + text, "_blank");
-}
-
-
-function sizeOfThings(){
-    var windowWidth = window.innerWidth;
-    var windowHeight = window.innerHeight;
+            else{
+                video = 'assets/videos/video_drawbe_celular.mp4';
+            }
+        }
+        $('#video').html(`<video autoplay="" muted="" loop="" width="100%"><source src="${video}" type="video/mp4"></video>`);
+    };
     
-    var screenWidth = screen.width;
-    var screenHeight = screen.height;
+    sizeOfThings();
+    
+    window.addEventListener('resize', function(){
+        sizeOfThings();
+    });
+/*Fim Adicionando vídeo de exibição ao cabeçalho do sit
+**************************************************************************/
 
-    if(screenWidth > 1200){
 
-        document.getElementById("video").innerHTML = `<video autoplay="" muted="" loop="" width="100%"><source src="assets/videos/video_drawbe.mp4" type="video/mp4"></video>`;
+/* ***********************************************************************
+Início Incluir imagens ao carousel */
+    const imagensCarousel = [
+        'assets/img/2.jpg',
+        'assets/img/3.jpg',
+        'assets/img/4.jpg',
+        'assets/img/5.jpg',
+        'assets/img/6.jpg',
+        'assets/img/7.jpg',
+        'assets/img/8.jpg',
+        'assets/img/9.jpg',
+        'assets/img/10.jpg',
+        'assets/img/11.jpg',
+        'assets/img/12.jpg',
+        'assets/img/13.jpg',
+        'assets/img/14.jpg',
+        'assets/img/15.jpg',
+    ];
+
+    function addImagensCarousel(){
+        imagensCarousel.forEach(img =>{
+            $('#imagensCarousel').append(`<div class="carousel-item" data-bs-interval="2500">
+                <img src="${img}" class="d-block w-100">
+            </div>`);
+        });
     }
-    else
-    {
-        if(screenWidth > 992){
-            document.getElementById("video").innerHTML = `<video autoplay="" muted="" loop="" width="100%"><source src="assets/videos/video_drawbe_tablet.mp4" type="video/mp4"></video>`;      
-        }
-        else{
-            document.getElementById("video").innerHTML = `<video autoplay="" muted="" loop="" width="100%"><source src="assets/videos/video_drawbe_celular.mp4" type="video/mp4"></video>`;
-        }
+    //Restante das imagens adicionadas via Javascript após carregamento da página
+    $(window).on("load", function(){
+        addImagensCarousel();
+    });
+    
+/*Fim Incluir imagens ao carousel
+**************************************************************************/
+
+
+/* ***********************************************************************
+Início Compra Identidade visual */
+    // Lista de pacotes Identidade visula
+    let pacotesIdVisual = [
+        {
+            'nome':'Pacote Start', 
+            'valor':'199,00', 
+            'imagem':'assets/img/5.jpg',
+            'imgValor':'assets/img/pacote_start.png',
+            'opcionais': true,
+            'adicionais':[
+                'Logotipo;',
+                'Submarca;',
+                'Ícone;',
+                'Marcas d’água (na cor original da marca, no preto e no branco);',
+                'Paleta de cores e Tipografia;',
+                'Documento contendo a identidade visual completa, com conceito da marca e todos os elementos construídos.'
+            ]
+        },
+        {
+            'nome':'Pacote Card', 
+            'valor':'245,00', 
+            'imagem':'assets/img/1.jpg',
+            'imgValor':'assets/img/pacote_card.png',
+            'opcionais': true,
+            'adicionais':[
+                'Logotipo;',
+                'Submarca;',
+                'Ícone;',
+                'Marcas d’água (na cor original da marca, no preto e no branco);',
+                'Paleta de cores e Tipografia;',
+                'Arte Cartão de Visita Físico;',
+                'Documento contendo a identidade visual completa, com conceito da marca e todos os elementos construídos.'
+            ]
+        },
+        {
+            'nome':'Pacote Digital Card', 
+            'valor':'255,00', 
+            'imagem':'assets/img/pacote_cartao.jpg',
+            'imgValor':'assets/img/pacote_digital_card.png',
+            'opcionais': true,
+            'adicionais':[
+                'Logotipo;',
+                'Submarca;',
+                'Ícone;',
+                'Marcas d’água (na cor original da marca, no preto e no branco);',
+                'Paleta de cores e Tipografia;',
+                'Cartão de Visita Digital Interativo;',
+                'Documento contendo a identidade visual completa, com conceito da marca e todos os elementos construídos.'
+            ]
+        },
+        {
+            'nome':'Pacote Rede Social', 
+            'valor':'340,00', 
+            'imagem':'assets/img/pacote_redesocial.jpg',
+            'imgValor':'assets/img/pacote_rede_social.png',
+            'opcionais': true,
+            'adicionais':[
+                'Logotipo;',
+                'Submarca;',
+                'Ícone;',
+                'Marcas d’água (na cor original da marca, no preto e no branco);',
+                '6 Templates para Post Feed;',
+                '3 Templates para Stories;',
+                '5 Capas para Destaques Instagram;',
+                'Paleta de cores e Tipografia;',
+                'Documento contendo a identidade visual completa, com conceito da marca e todos os elementos construídos.'
+            ]
+        },
+        {
+            'nome':'Pacote Identidade Papelaria', 
+            'valor':'500,00', 
+            'imagem':'assets/img/pacote_papelaria.jpg',
+            'imgValor':'assets/img/pacote_papelaria.png',
+            'opcionais': true,
+            'adicionais':[
+                'Logotipo;',
+                'Submarca;',
+                'Ícone;',
+                'Marcas d’água (na cor original da marca, no preto e no branco);',
+                'Arte Cartão de Visita Físico;',
+                'Arte Papel Timbrado;',
+                'Arte Envelope A4;',
+                'Arte Envelope Ofício (envelope menor);',
+                'Arte Pasta;',
+                'Paleta de cores e Tipografia;',
+                'Documento contendo a identidade visual completa, com conceito da marca e todos os elementos construídos.'
+            ]
+        },
+        {
+            'nome':'Catálogo de Apresentação', 
+            'valor':'15.00', 
+            'imagem':'assets/img/catalogo.jpg',
+            'imgValor':'assets/img/valorcatalogo.png',
+            'opcionais': false,
+            'adicionais':[
+                'Apresente sua empresa, serviço ou produto para seu público de forma profissional e personalizada.',
+                'Um catálogo contendo todas as suas informações de forma interativa e atrativa.', 
+                'O valor final do catálogo dependerá da quantidade de páginas desenvolvidas.'
+            ]
+        },
+    ];
+    //Templates para exibição dos pacotes de identidade visual
+    function template1(nome,valor,imagem,imgValor,adicionais=[]){
+        let adicional = '';
+        adicionais.forEach(item =>{ adicional+=`<li class="text-black-50 mb-0 text-size-14">${item}</li>`});
+        
+        let template = `<div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+            <div class="col-xl-8 col-lg-7">
+                <img class="img-fluid mb-3 mb-lg-0" src="${imagem}" alt="..." />
+            </div>
+            <div class="col-xl-4 col-lg-5">
+                <div class="featured-text text-left text-lg-left p-2 p-md-4">
+                    <h4 class="text-cinza-2">${nome}</h4>
+                    <ul>${adicional}</ul>
+                </div>
+                <div class="row gx-0 align-items-center text-center ms-4">
+                    <div class="col-5">
+                        <img src="${imgValor}" alt="..." style="width: 9rem;" />
+                    </div>
+                    <div class="col-7">
+                        <button type="button" class="btn btn-secondary btn-compra p-2" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="exibirPacoteIdvisualEscolhido('${nome}','${valor}')">Adquirir Agora</button>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+        return template;
     }
-  
-  };
-  
-  sizeOfThings();
-  
-  window.addEventListener('resize', function(){
-      sizeOfThings();
-  });
+
+    function template2(nome,valor,imagem,imgValor,adicionais=[]){
+        let adicional = '';
+        adicionais.forEach(item =>{ adicional+=`<p class="text-black-50 mb-0 text-size-14">${item}</p>`});
+        let template = `<div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+            <div class="col-xl-8 col-lg-7">
+                <img class="img-fluid mb-3 mb-lg-0" src="${imagem}"/>
+            </div>
+            <div class="col-xl-4 col-lg-5">
+                <div class="featured-text text-left text-lg-left p-2 p-md-4">
+                    <h4 class="text-cinza-2">${nome}</h4>
+                    ${adicional}  
+                </div>
+                <div class="row gx-0 align-items-center text-center ms-4">
+                    <div class="col-5">
+                        <img src="${imgValor}" style="width: 7rem;" />
+                    </div>
+                    <div class="col-7">
+                        <button type="button" class="btn btn-secondary btn-compra p-2" onclick="enviarMsgWhatsApp('${nome}, R$${valor} por página. Verificar valor final e quantidade de páginas com a designer no momento da contratação.')">Adquirir Agora</button>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+        return template;
+    }
+    // Criando função para exibição dos pacotes de identidade visual
+    function exibirPacotesIdVisula(){
+          pacotesIdVisual.forEach(pacote =>{
+              if(pacote.opcionais){
+                  $('#pacotesIdVisual').append(template1(pacote.nome,pacote.valor,pacote.imagem,pacote.imgValor,pacote.adicionais));                  
+              }
+              else{
+                $('#pacotesIdVisual').append(template2(pacote.nome,pacote.valor,pacote.imagem,pacote.imgValor,pacote.adicionais));
+              }
+          }); 
+    }
+    //Pacotes adicionados via Javascript após carregamento da página
+    $(window).on("load", function(){
+        exibirPacotesIdVisula();
+    });
+    
+
+    //Array para armazenar a compra
+    var compra = [];
+    compra.opcional = [];
+    //Lista de opcionais que podem ser adicionados a compra
+    const listaOpcionaisPacotesIdVisual = [
+        {'id': 0, 'nome': 'Arte Cartão de Visita Físico'                    , 'valor': 45},
+        {'id': 1, 'nome': 'Cartão de Visita Digital'                        , 'valor': 55},
+        {'id': 2, 'nome': 'Arte Envelope A4'                                , 'valor': 50},
+        {'id': 3, 'nome': 'Arte Envelope Ofício'                            , 'valor': 60},
+        {'id': 4, 'nome': 'Arte Papel Timbrado/Receituário'                 , 'valor': 50},
+        {'id': 5, 'nome': 'Arte para Tag ou Etiqueta'                       , 'valor': 35},
+        {'id': 6, 'nome': 'Arte para Pasta'                                 , 'valor': 45},
+        {'id': 7, 'nome': 'Arte Ficha Anamnese (página única)'              , 'valor': 50},
+        {'id': 8, 'nome': 'Arte Ficha Anamnese Dupla (capa + 2 páginas)'    , 'valor': 95},
+        {'id': 9, 'nome': 'Arte Flyer, Cartaz ou Banner'                   , 'valor': 50},
+        {'id': 10, 'nome': '5 Capas Destaques'                              , 'valor': 30},
+        {'id': 11, 'nome': '10 Capas Destaques'                             , 'valor': 60},
+        {'id': 12, 'nome': 'Template Post Instagram (cada)'                 , 'valor': 10, 'multiplos': true},
+        {'id': 13, 'nome': 'Arte Post Instagram (cada)'                     , 'valor': 15, 'multiplos': true},
+    ];
+
+    //Ler quantidade de um opcional adicionado
+    function lerQuantidade(elemento){
+        let quant = 1;
+        if(elemento.checked){  
+            do{
+                quant = prompt("Quantidade?");
+                quant = Number.parseInt(quant);
+                if(Number.isNaN(quant)){
+                    var retorno = confirm("Escreva apenas números");
+                    if (!retorno){
+                        quant = 1;
+                        break;
+                    }                
+                }
+            }while(Number.isNaN(quant));
+        }
+        return quant;
+    }
+
+    //Adicionar opcionais a compra
+    function addOpcionalACompra(element, item, quant = 1){
+        if(element.checked){
+            compra.opcional[item] = {'nome': listaOpcionaisPacotesIdVisual[item].nome, 'valor': listaOpcionaisPacotesIdVisual[item].valor, 'quant':quant}
+        }else{
+            delete compra.opcional[item];
+        }    
+        exibirValorTotal();
+    }
+
+    //Calcular valor do pacote acrescido dos opcionais. 
+    function calcValorCompra(){
+        compra.valorTotal = parseFloat(compra.pacote.valor);
+        compra.opcional.forEach(item => {compra.valorTotal += (parseFloat(item.valor) * parseFloat(item.quant))});
+    }
+    //Exibir calor total da compra
+    function exibirValorTotal(){
+        calcValorCompra();
+        $('#ValorTotalIdVisual').text('R$'+ compra.valorTotal);
+    }
+
+    //Selecionar o pacote escolhido para anexar ao modal de opcionais
+    function exibirPacoteIdvisualEscolhido(pacote, valor){
+        compra.pacote = {'nome': pacote, 'valor': valor}
+        $('#modalCompraIdVisualLabel').html(`${compra.pacote.nome} - (R$${compra.pacote.valor})`);
+        compra.opcional = [];
+        $('#ValorTotalIdVisual').html(compra.pacote.valor);
+
+        var dados = '';
+
+        listaOpcionaisPacotesIdVisual.forEach(opcional =>{
+            
+            dados += `<label class="list-group-item d-flex justify-content-between align-items-center text-cinza-2 text-size-14">
+                <div>
+                    <input class="form-check-input me-1" type="checkbox" value="" onchange="addOpcionalACompra(this, ${opcional.id}${opcional.multiplos?', lerQuantidade(this)':''})">
+                    ${opcional.nome}
+                </div>
+                <span class="badge bg-primary rounded-pill">R$${opcional.valor}</span>
+            </label>
+            `;    
+        });
+        $("#listaOpcionaisPacotesIdVisual").html(dados);
+    }
+
+    //Função responsável por finalizar a compra e enviar a mensagem do pacote escolhido mais opcionais via WhatsApp
+    function finalizarCompra(){   
+        var text = `Pacote escolhido: ${compra.pacote.nome} - R$${compra.pacote.valor}; \n`;
+        if(compra.opcional.length > 0){
+            text += `Opcionais incluidos: \n`
+            compra.opcional.forEach(item => {text +=  `* (${item.quant +' '+ item.nome}, valor R$${parseFloat(item.quant) * parseFloat(item.valor)}); \n`});
+            text += `Valor total: R$${compra.valorTotal}`;
+        }
+        enviarMsgWhatsApp(text);
+    }
+
+/*Fim Compra Identidade visual
+**************************************************************************/
+
+/*************************************************************************
+Enviar mensagem via WhatsApp*/
+    function enviarMsgWhatsApp(text){
+        const textFormate = window.encodeURIComponent(text);
+        const fone = '5511950509303';
+        const apiUrl = `https://api.whatsapp.com/send?phone=${fone}&text=${textFormate}`; 
+        window.open(apiUrl, "_blank");
+    }
+/*Fim Enviar mensagem via WhatsApp
+**************************************************************************/
 
 /* ***********************************************************************
 Início PROJETOS */
-
 // Listando imagens de capa para os projetos (portfólios)
     const listOfProjects = [
         {'projectName':'Beauté','dirName': 'BEAUTE','capa':'capa.jpg', 'images':[                
@@ -267,7 +474,11 @@ Início PROJETOS */
             );
         });
     }
-    listProjects();
+    //project list load after page load
+    $(window).on("load", function(){
+        listProjects();
+    });
+    
     //buncar projeto por nome do diretório
     function getProjectByDirName(dirName){
         let p;

@@ -1,14 +1,4 @@
-.testeImg{
-    background: url('../assets/img/1.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;
-}
 
-.testeImg:hover{
-    background: radial-gradient(circle, rgba(173,173,173,0.3) 0%, rgba(255,255,255,0.3) 100%), url('../assets/img/1.jpg');    
-    background-repeat: no-repeat;
-    background-size: contain;
-}
 
 .capaPortfolio{
     position: relative;
@@ -87,9 +77,6 @@
     border-width: 0.3em;
     border-color: #ff9f8a80;
     border-style: solid;
-}
-.social-icon{
-
 }
 
 .pacotes-section ul {

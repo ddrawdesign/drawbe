@@ -44,20 +44,18 @@
             </div>
         </div>
     </nav>
+    
     <!-- Cabeçalho (vídeo e logo tipo)-->
     <header class="cabecalho">
         <!-- Vídeo incluído via Javascript -->
         <div id="video">
-
+            
         </div>
         <!-- Apresentação do logo tipo sobre o vídeo -->
         <div class="apresentacao container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
             <div class="d-flex justify-content-center">
                 <div class="text-center">
                     <img id="imgApresentacao" src="assets/img/logotipo_drawbe.png" alt="">
-                    <!-- <h1 class="mx-auto my-0 text-uppercase"></h1>
-                        <h2 class="text-white-50 mx-auto mt-2 mb-5"></h2>
-                        <a class="btn btn-primary" href="#about">Iniciar</a> -->
                 </div>
             </div>
         </div>
@@ -85,52 +83,11 @@
         </div>
         <div class="container-xl px-0 px-lg-5">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
+                <div class="carousel-inner" id="imagensCarousel">                    
                     <div class="carousel-item active" data-bs-interval="2500">
                         <img src="assets/img/1.jpg" class="d-block w-100">
                     </div>
-                    <div class="carousel-item" data-bs-interval="2500">
-                        <img src="assets/img/2.jpg" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="2500">
-                        <img src="assets/img/3.jpg" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="2500">
-                        <img src="assets/img/4.jpg" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="2500">
-                        <img src="assets/img/5.jpg" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="2500">
-                        <img src="assets/img/6.jpg" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="2500">
-                        <img src="assets/img/7.jpg" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="2500">
-                        <img src="assets/img/8.jpg" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="2500">
-                        <img src="assets/img/9.jpg" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="2500">
-                        <img src="assets/img/10.jpg" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="2500">
-                        <img src="assets/img/11.jpg" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="2500">
-                        <img src="assets/img/12.jpg" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="2500">
-                        <img src="assets/img/13.jpg" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="2500">
-                        <img src="assets/img/14.jpg" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item" data-bs-interval="2500">
-                        <img src="assets/img/15.jpg" class="d-block w-100">
-                    </div>
+                    <!-- Imagens here, add by javascript -->
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                     data-bs-slide="prev">
@@ -148,276 +105,14 @@
 
     <!-- Pacotes para venda  -->
     <section class="pacotes-section fundo-branco pb-4 mb-1" id="pacotes">
-        <div class="container px-4 px-lg-5">
+        <div class="container px-4 px-lg-5" id="pacotesIdVisual">
             <h4 class="mb-4 cor-text-idvisual">Pacotes Identidade Visual</h4>
-            <!-- 1º pacote-->
-            <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                <div class="col-xl-8 col-lg-7">
-                    <img class="img-fluid mb-3 mb-lg-0" src="assets/img/5.jpg" alt="..." />
-                </div>
-                <div class="col-xl-4 col-lg-5">
-                    <div class="featured-text text-left text-lg-left">
-                        <h4 class="text-cinza-2">Pacote Start</h4>
-                        <ul>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Logotipo;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Submarca;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Ícone;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Marcas d’água (na cor original da marca, no preto e no branco);
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Paleta de cores e Tipografia;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Documento contendo a identidade visual completa, com conceito da marca e todos os
-                                elementos construídos.
-                            </li>
-                        </ul>
-
-                    </div>
-                    <div class="row gx-0 align-items-center text-center ms-4">
-                        <div class="col-5">
-                            <img src="assets/img/pacote_start.png" alt="..." style="width: 9rem;" />
-                        </div>
-                        <div class="col-7">
-                            <button type="button" class="btn btn-secondary btn-compra p-2" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="exibirPacoteIdvisualEscolhido('Pacote Start','199,00')">Adquirir Agora</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 2º pacote-->
-            <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                <div class="col-xl-8 col-lg-7">
-                    <img class="img-fluid mb-3 mb-lg-0" src="assets/img/1.jpg" alt="..." />
-                </div>
-                <div class="col-xl-4 col-lg-5">
-                    <div class="featured-text text-left text-lg-left">
-                        <h4 class="text-cinza-2">Pacote Card</h4>
-                        <ul>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Logotipo;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Submarca;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Ícone;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Marcas d’água (na cor original da marca, no preto e no branco);
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Paleta de cores e Tipografia;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Arte Cartão de Visita Físico;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Documento contendo a identidade visual completa, com conceito da marca e todos os
-                                elementos construídos.
-                            </li>
-                        </ul>
-
-                    </div>
-                    <div class="row gx-0 align-items-center text-center ms-4">
-                        <div class="col-5">
-                            <img src="assets/img/pacote_card.png" alt="..." style="width: 9rem;" />
-                        </div>
-                        <div class="col-7">
-                            <button type="button" class="btn btn-secondary btn-compra p-2" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="exibirPacoteIdvisualEscolhido('Pacote Card','245,00')">Adquirir Agora</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 3º pacote-->
-            <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                <div class="col-xl-8 col-lg-7">
-                    <img class="img-fluid mb-3 mb-lg-0" src="assets/img/pacote_cartao.jpg" alt="..." />
-                </div>
-                <div class="col-xl-4 col-lg-5">
-                    <div class="featured-text text-left text-lg-left">
-                        <h4 class="text-cinza-2">Pacote Digital Card</h4>
-                        <ul>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Logotipo;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Submarca;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Ícone;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Marcas d’água (na cor original da marca, no preto e no branco);
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Paleta de cores e Tipografia;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Cartão de Visita Digital Interativo;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Documento contendo a identidade visual completa, com conceito da marca e todos os
-                                elementos construídos.
-                            </li>
-                        </ul>
-
-                    </div>
-                    <div class="row gx-0 align-items-center text-center ms-4">
-                        <div class="col-5">
-                            <img src="assets/img/pacote_digital_card.png" alt="..." style="width: 9rem;" />
-                        </div>
-                        <div class="col-7">
-                            <button type="button" class="btn btn-secondary btn-compra p-2" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="exibirPacoteIdvisualEscolhido('Pacote Digital Card','255,00')">Adquirir Agora</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 4º pacote-->
-            <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                <div class="col-xl-8 col-lg-7">
-                    <img class="img-fluid mb-3 mb-lg-0" src="assets/img/pacote_redesocial.jpg" alt="..." />
-                </div>
-                <div class="col-xl-4 col-lg-5">
-                    <div class="featured-text text-left text-lg-left">
-                        <h4 class="text-cinza-2">Pacote Rede Social</h4>
-                        <ul>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Logotipo;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Submarca;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Ícone;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Marcas d’água (na cor original da marca, no preto e no branco);
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                6 Templates para Post Feed;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                3 Templates para Stories;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                5 Capas para Destaques Instagram;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Paleta de cores e Tipografia;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Documento contendo a identidade visual completa, com conceito da marca e todos os
-                                elementos construídos.
-                            </li>
-                        </ul>
-
-                    </div>
-                    <div class="row gx-0 align-items-center text-center ms-4">
-                        <div class="col-5">
-                            <img src="assets/img/pacote_rede_social.png" alt="..." style="width: 9rem;" />
-                        </div>
-                        <div class="col-7">
-                            <button type="button" class="btn btn-secondary btn-compra p-2" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="exibirPacoteIdvisualEscolhido('Pacote Rede Social','340,00')">Adquirir Agora</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 5º pacote-->
-            <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                <div class="col-xl-8 col-lg-7">
-                    <img class="img-fluid mb-3 mb-lg-0" src="assets/img/pacote_papelaria.jpg" alt="..." />
-                </div>
-                <div class="col-xl-4 col-lg-5">
-                    <div class="featured-text text-left text-lg-left">
-                        <h4 class="text-cinza-2">Pacote Identidade Papelaria</h4>
-                        <ul>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Logotipo;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Submarca;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Ícone;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Marcas d’água (na cor original da marca, no preto e no branco);
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Arte Cartão de Visita Físico;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Arte Papel Timbrado;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Arte Envelope A4;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Arte Envelope Ofício (envelope menor);
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Arte Pasta;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Paleta de cores e Tipografia;
-                            </li>
-                            <li class="text-black-50 mb-0 text-size-14">
-                                Documento contendo a identidade visual completa, com conceito da marca e todos os
-                                elementos construídos.
-                            </li>
-                        </ul>
-
-                    </div>
-                    <div class="row gx-0 align-items-center text-center ms-4">
-                        <div class="col-5">
-                            <img src="assets/img/pacote_papelaria.png" alt="..." style="width: 9rem;" />
-                        </div>
-                        <div class="col-7">
-                            <button type="button" class="btn btn-secondary btn-compra p-2" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="exibirPacoteIdvisualEscolhido('Pacote Papelaria','500,00')">Adquirir Agora</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 6º pacote-->
-            <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                <div class="col-xl-8 col-lg-7">
-                    <img class="img-fluid mb-3 mb-lg-0" src="assets/img/catalogo.jpg" alt="..." />
-                </div>
-                <div class="col-xl-4 col-lg-5">
-                    <div class="featured-text text-left text-lg-left">
-                        <h4 class="text-cinza-2">Catálogo de Apresentação</h4>
-                        <p class="text-black-50 mb-0 text-size-14">
-                            Apresente sua empresa, serviço ou produto para seu público de forma profissional e personalizada.
-                        </p>
-                        <p class="text-black-50 mb-0 text-size-14">
-                            Um catálogo contendo todas as suas informações de forma interativa e atrativa. 
-                        </p>
-                        <p class="text-black-50 mb-0 text-size-14">
-                            O valor final do catálogo dependerá da quantidade de páginas desenvolvidas.
-                        </p>
-                    </div>
-                    <div class="row gx-0 align-items-center text-center ms-4">
-                        <div class="col-5">
-                            <img src="assets/img/valorcatalogo.png" alt="..." style="width: 7rem;" />
-                        </div>
-                        <div class="col-7">
-                            <button type="button" class="btn btn-secondary btn-compra p-2" onclick="enviarMsgWhatsApp('Pacote escolhido: Catálogo de apresentação, R$15,00 por página. Verificar valor final e quantidade de páginas com a designer no momento da contratação.')">Adquirir Agora</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- package here, add by javascript -->
         </div>
     </section>
 
     <!-- Redes Sociais-->
-    <section class="redes-section fundo-branco" id="redes">
+    <section class="redes-section fundo-branco pb-4 mb-1" id="redes">
 
         <div class="container px-4 px-lg-5">
             <h4 class="mb-4 cor-text-idvisual">Pacotes de Artes</h4>
@@ -495,13 +190,13 @@
     </section>
 
     <!-- Projetos -->
-    <section class="redes-section" id="projetos">
+    <section class="redes-section  pb-4 mb-1" id="projetos">
         <div class="container-fluid px-4 px-lg-5">
             <h4 class="mb-4 cor-text-idvisual">Nossos Projetos</h4>
         </div>
         <div class="container-fluid px-0 px-lg-5">
             <div class="row gx-0 mb-5 mb-lg-0 justify-content-center" id="capaProjetos">
-                <!-- Projects here -->
+                <!-- Projects here, load by javascrip -->
                  
                 <!-- ************* -->
             </div>            
@@ -509,7 +204,7 @@
     </section>
 
     <!-- Contact-->
-    <section class="contact-section text-center" id="contatos">
+    <section class="contact-section text-center pt-4" id="contatos">
         
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -519,9 +214,9 @@
                 </div>
                 
                 <div class="social d-flex justify-content-center">
-                    <a class="mx-4" href="https://api.whatsapp.com/send?phone=5511950509303" target="_bank"><i class="fab fa-whatsapp fa-3x"></i></a>
-                    <a class="mx-4" href="https://www.instagram.com/drawbedesign" target="_bank"><i class="fab fa-instagram fa-3x"></i></a>
-                    <a class="mx-4" href="https://www.facebook.com/drawbedesign" target="_bank"><i class="fab fa-facebook-f fa-3x"></i></a>
+                    <a class="mx-2 mx-md-4" href="https://api.whatsapp.com/send?phone=5511950509303" target="_bank"><i class="fab fa-whatsapp fa-3x"></i></a>
+                    <a class="mx-2 mx-md-4" href="https://www.instagram.com/drawbedesign" target="_bank"><i class="fab fa-instagram fa-3x"></i></a>
+                    <a class="mx-2 mx-md-4" href="https://www.facebook.com/drawbedesign" target="_bank"><i class="fab fa-facebook-f fa-3x"></i></a>
                 </div>
             </div>
         </div>
@@ -579,14 +274,16 @@
 
     <!-- Modal Exbição detalhes do portfólio -->
     <div class="modal fade" id="exibicaoDetalhesPortfolio" tabindex="-1" aria-labelledby="modalexibicaoDetalhesPortfolio" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
+        <div class="modal-dialog modal-fullscreen"><!--  modal-dialog-centered -->
             <div class="modal-content">
                 <div class="modal-header py-2">
                     <h5 class="modal-title cor-text-idvisual" id="modalexibicaoDetalhesPortfolio"></h5>
                     <button type="button" class="btn-close" data-bs-target="#exibicaoPortfolio" data-bs-toggle="modal" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body  p-0 text-center">
-                    <img src="" class="img-fluid" alt="..." id="imageZoon">
+                    <div class="h-100 row align-items-center">
+                        <img src="" class="img-fluid" alt="..." id="imageZoon">
+                    </div>                    
                 </div> 
             </div>
         </div>
