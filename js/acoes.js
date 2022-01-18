@@ -1,7 +1,8 @@
 /*************************************************************************
 Adicionando vídeo de exibição ao cabeçalho do site*/
-    function sizeOfThings(){        
-        let screenWidth = screen.width;
+    let lastScreenWidth = 0;
+    function sizeOfThings(screenWidth){
+        console.log(screenWidth);
         let video;
         if(screenWidth > 1200){
             video = 'assets/videos/video_drawbe.mp4';}
@@ -15,12 +16,18 @@ Adicionando vídeo de exibição ao cabeçalho do site*/
             }
         }
         $('#video').html(`<video autoplay="" muted="" loop="" width="100%"><source src="${video}" type="video/mp4"></video>`);
+        lastScreenWidth =  screenWidth;
     };
     
-    sizeOfThings();
-    
+    $(window).on("load", function(){
+        sizeOfThings(screen.width);
+    });
+        
     window.addEventListener('resize', function(){
-        sizeOfThings();
+        let screenWidth = screen.width;
+        if(screenWidth < (lastScreenWidth - 50) || screenWidth > (lastScreenWidth + 50)){           
+            sizeOfThings(screenWidth);
+        }        
     });
 /*Fim Adicionando vídeo de exibição ao cabeçalho do sit
 **************************************************************************/
