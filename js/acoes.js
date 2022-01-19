@@ -14,8 +14,7 @@ Adicionando vídeo de exibição ao cabeçalho do site*/
                 else{
                     video = 'assets/videos/video_drawbe_celular.mp4';
                 }
-            }
-            console.log(lastScreenWidth, screenWidth,video);   
+            } 
             $('#video').html(`<video autoplay="" muted="" loop="" width="100%"><source src="${video}" type="video/mp4"></video>`);
             lastScreenWidth =  screenWidth;
         }  
