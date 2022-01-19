@@ -15,16 +15,16 @@ Adicionando vídeo de exibição ao cabeçalho do site*/
                     video = 'assets/videos/video_drawbe_celular.mp4';
                 }
             } 
-            $('#video').html(`<video autoplay="" muted="" loop="" width="100%"><source src="${video}" type="video/mp4"></video>`);
+            $('#video').html(`<video autoplay="" muted="" loop="" width="100%"><source src="${video}" type="video/mp4"></video>`);            
             lastScreenWidth =  screenWidth;
         }  
     };
     
-    sizeOfThings(screen.width);
+    //sizeOfThings(screen.width);
         
-    window.addEventListener('resize', function(){
-        sizeOfThings(screen.width);
-    });
+    // window.addEventListener('resize', function(){
+    //     sizeOfThings(screen.width);
+    // });
 /*Fim Adicionando vídeo de exibição ao cabeçalho do sit
 **************************************************************************/
 
