@@ -20,11 +20,11 @@ Adicionando vídeo de exibição ao cabeçalho do site*/
         }  
     };
     
-    //sizeOfThings(screen.width);
+    sizeOfThings(screen.width);
         
-    // window.addEventListener('resize', function(){
-    //     sizeOfThings(screen.width);
-    // });
+    window.addEventListener('resize', function(){
+        sizeOfThings(screen.width);
+    });
 /*Fim Adicionando vídeo de exibição ao cabeçalho do sit
 **************************************************************************/
 
@@ -44,8 +44,7 @@ Início Incluir imagens ao carousel */
         'assets/img/11.jpg',
         'assets/img/12.jpg',
         'assets/img/13.jpg',
-        'assets/img/14.jpg',
-        'assets/img/15.jpg',
+        'assets/img/15.jpg'
     ];
 
     function addImagensCarousel(){
@@ -70,148 +69,127 @@ Início Compra Identidade visual */
     let pacotesIdVisual = [
         {
             'nome':'Pacote Start', 
-            'valor':'199,00', 
+            'valor':'300,00', 
             'imagem':'assets/img/5.jpg',
             'imgValor':'assets/img/pacote_start.png',
             'opcionais': true,
             'adicionais':[
-                'Logotipo;',
+                'Logotipo Principal;',
                 'Submarca;',
                 'Ícone;',
                 'Marcas d’água (na cor original da marca, no preto e no branco);',
                 'Paleta de cores e Tipografia;',
+                'Mockups;',
+                'Pattern (1 formato);',
                 'Documento contendo a identidade visual completa, com conceito da marca e todos os elementos construídos.'
             ]
         },
         {
-            'nome':'Pacote Card', 
-            'valor':'245,00', 
+            'nome':'Pacote Plus', 
+            'valor':'550,00', 
             'imagem':'assets/img/1.jpg',
             'imgValor':'assets/img/pacote_card.png',
             'opcionais': true,
             'adicionais':[
-                'Logotipo;',
+                'Logotipo Principal;',
                 'Submarca;',
                 'Ícone;',
                 'Marcas d’água (na cor original da marca, no preto e no branco);',
                 'Paleta de cores e Tipografia;',
-                'Arte Cartão de Visita Físico;',
+                'Mockups;',
+                'Moodboard;',
+                'Pattern (2 formatos);',
+                'Cartão de Visita Físico;',
+                'Cartão Digital DB Card;',
+                '5 capas para destaques;',
                 'Documento contendo a identidade visual completa, com conceito da marca e todos os elementos construídos.'
             ]
-        },
+        },  
         {
-            'nome':'Pacote Digital Card', 
-            'valor':'255,00', 
-            'imagem':'assets/img/pacote_cartao.jpg',
-            'imgValor':'assets/img/pacote_digital_card.png',
-            'opcionais': true,
-            'adicionais':[
-                'Logotipo;',
-                'Submarca;',
-                'Ícone;',
-                'Marcas d’água (na cor original da marca, no preto e no branco);',
-                'Paleta de cores e Tipografia;',
-                'Cartão de Visita Digital Interativo;',
-                'Documento contendo a identidade visual completa, com conceito da marca e todos os elementos construídos.'
-            ]
-        },
-        {
-            'nome':'Pacote Rede Social', 
-            'valor':'340,00', 
-            'imagem':'assets/img/pacote_redesocial.jpg',
-            'imgValor':'assets/img/pacote_rede_social.png',
-            'opcionais': true,
-            'adicionais':[
-                'Logotipo;',
-                'Submarca;',
-                'Ícone;',
-                'Marcas d’água (na cor original da marca, no preto e no branco);',
-                '6 Templates para Post Feed;',
-                '3 Templates para Stories;',
-                '5 Capas para Destaques Instagram;',
-                'Paleta de cores e Tipografia;',
-                'Documento contendo a identidade visual completa, com conceito da marca e todos os elementos construídos.'
-            ]
-        },
-        {
-            'nome':'Pacote Identidade Papelaria', 
-            'valor':'500,00', 
+            'nome':'Pacote Premium', 
+            'valor':'900,00', 
             'imagem':'assets/img/pacote_papelaria.jpg',
-            'imgValor':'assets/img/pacote_papelaria.png',
+            'imgValor':'assets/img/pacote_premium.png',
             'opcionais': true,
             'adicionais':[
-                'Logotipo;',
+                'Logotipo Principal;',
+                'Logotipo Alternativo;',
                 'Submarca;',
                 'Ícone;',
                 'Marcas d’água (na cor original da marca, no preto e no branco);',
-                'Arte Cartão de Visita Físico;',
-                'Arte Papel Timbrado;',
-                'Arte Envelope A4;',
-                'Arte Envelope Ofício (envelope menor);',
-                'Arte Pasta;',
                 'Paleta de cores e Tipografia;',
+                'Mockups;',
+                'Moodboard;',
+                'Pattern (2 formatos);',
+                'Cartão de Visita Físico;',
+                'Cartão Digital DB Card;',
+                '5 capas para destaques;',
+                'Artes para Papelaria;',
+                'Naming;',
                 'Documento contendo a identidade visual completa, com conceito da marca e todos os elementos construídos.'
             ]
         },
         {
             'nome':'Catálogo de Apresentação', 
-            'valor':'15.00', 
+            'valor':'18.00', 
             'imagem':'assets/img/catalogo.jpg',
             'imgValor':'assets/img/valorcatalogo.png',
             'opcionais': false,
             'adicionais':[
                 'Apresente sua empresa, serviço ou produto para seu público de forma profissional e personalizada.',
                 'Um catálogo contendo todas as suas informações de forma interativa e atrativa.', 
-                'O valor final do catálogo dependerá da quantidade de páginas desenvolvidas.'
+                'O valor final do catálogo dependerá da quantidade de páginas desenvolvidas.É necessário já ter uma identidade visual.'
             ]
-        },
+        }
     ];
     //Templates para exibição dos pacotes de identidade visual
     function template1(nome,valor,imagem,imgValor,adicionais=[]){
         let adicional = '';
-        adicionais.forEach(item =>{ adicional+=`<li class="text-black-50 mb-0 text-size-14">${item}</li>`});
-        
-        let template = `<div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-            <div class="col-xl-8 col-lg-7">
-                <img class="img-fluid mb-3 mb-lg-0" src="${imagem}" alt="..." />
+        adicionais.forEach(item =>{ adicional+=`<li class="text-black-50 mb-0 text-size-14">${item}</li>`});    
+        let template = `
+        <div class="col-12 col-md-6 mb-4">
+            <div class="mb-3">
+                <img class="img-fluid" src="${imagem}">
+            </div>            
+            <div class="featured-text text-left text-lg-left">
+                <h4 class="text-cinza-2">${nome}</h4>
+                <ul>
+                    ${adicional}
+                </ul>
             </div>
-            <div class="col-xl-4 col-lg-5">
-                <div class="featured-text text-left text-lg-left p-2 p-md-4">
-                    <h4 class="text-cinza-2">${nome}</h4>
-                    <ul>${adicional}</ul>
+            <div class="row align-items-center text-center ms-4">
+                <div class="col-5">
+                    <img src="${imgValor}" style="width: 9rem;">
                 </div>
-                <div class="row gx-0 align-items-center text-center ms-4">
-                    <div class="col-5">
-                        <img src="${imgValor}" alt="..." style="width: 9rem;" />
-                    </div>
-                    <div class="col-7">
-                        <button type="button" class="btn btn-secondary btn-compra p-2" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="exibirPacoteIdvisualEscolhido('${nome}','${valor}')">Adquirir Agora</button>
-                    </div>
+                <div class="col-7">
+                    <button type="button" class="btn btn-secondary btn-compra p-2" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="exibirPacoteIdvisualEscolhido('${nome}','${valor}')">Adquirir Agora</button>
                 </div>
             </div>
         </div>`;
+
         return template;
     }
 
     function template2(nome,valor,imagem,imgValor,adicionais=[]){
         let adicional = '';
         adicionais.forEach(item =>{ adicional+=`<p class="text-black-50 mb-0 text-size-14">${item}</p>`});
-        let template = `<div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-            <div class="col-xl-8 col-lg-7">
-                <img class="img-fluid mb-3 mb-lg-0" src="${imagem}"/>
+        let template = `
+        <div class="col-12 col-md-6 mb-4">
+            <div class="mb-3">
+                <img class="img-fluid" src="${imagem}">
+            </div>            
+            <div class="featured-text text-left text-lg-left">
+                <h4 class="text-cinza-2">${nome}</h4>
+                <ul>
+                    ${adicional}
+                </ul>
             </div>
-            <div class="col-xl-4 col-lg-5">
-                <div class="featured-text text-left text-lg-left p-2 p-md-4">
-                    <h4 class="text-cinza-2">${nome}</h4>
-                    ${adicional}  
+            <div class="row align-items-center text-center ms-4">
+                <div class="col-5">
+                    <img src="${imgValor}" style="width: 7rem;" />
                 </div>
-                <div class="row gx-0 align-items-center text-center ms-4">
-                    <div class="col-5">
-                        <img src="${imgValor}" style="width: 7rem;" />
-                    </div>
-                    <div class="col-7">
-                        <button type="button" class="btn btn-secondary btn-compra p-2" onclick="enviarMsgWhatsApp('${nome}, R$${valor} por página. Verificar valor final e quantidade de páginas com a designer no momento da contratação.')">Adquirir Agora</button>
-                    </div>
+                <div class="col-7">
+                    <button type="button" class="btn btn-secondary btn-compra p-2" onclick="enviarMsgWhatsApp('${nome}, R$${valor} por página. Verificar valor final e quantidade de páginas com a designer no momento da contratação.')">Adquirir Agora</button>
                 </div>
             </div>
         </div>`;

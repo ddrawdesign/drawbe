@@ -11478,93 +11478,6 @@ html {
 body {
   letter-spacing: 0.0625em;
 }
-
-#mainNav {
-  min-height: 3.5rem;
-  background-color: #fff;
-}
-#mainNav .navbar-toggler {
-  font-size: 80%;
-  padding: 0.75rem;
-  color: #ff9076;
-  border: 1px solid #ff9076;
-}
-
-#mainNav .navbar-toggler:focus {
-  outline: none;
-}
-#mainNav .navbar-brand {
-  color: #727070;
-  font-weight: normal;
-  padding: 0.9rem 0;
-}
-#mainNav .navbar-nav .nav-item:hover {
-  color: fade(#fff, 80%);
-  outline: none;
-  background-color: transparent;
-}
-#mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
-  outline: none;
-  background-color: transparent;
-}
-@media (min-width: 992px) {
-  #mainNav {
-    padding-top: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-    background-color: transparent;
-    transition: background-color 0.3s ease-in-out;
-  }
-  #mainNav .navbar-brand {
-    padding: 0.5rem 0;
-    color: #ffffff;
-  }
-
-  #mainNav .navbar-brand:hover {
-    color: rgb(255 255 255 / 90%);
-    /* color: #ff9076; */
-  }
-
-  #mainNav.navbar-shrink .navbar-brand:hover {
-    color: #ff9076;
-  }
-
-  #mainNav .nav-link {
-    transition: none;
-    padding: 2rem 1.5rem;
-    color: #fff
-  }
-  #mainNav .nav-link:hover {
-    color: rgb(255 255 255 / 75%);
-  }
-  #mainNav .nav-link:active {
-    color: #fff;
-  }
-  #mainNav.navbar-shrink {
-    background-color: #fff;
-  }
-  #mainNav.navbar-shrink .navbar-brand {
-    color: #727070;
-  }
-  #mainNav.navbar-shrink .nav-link {
-    color: #727070;
-    padding: 1.5rem 1.5rem 1.25rem;
-    border-bottom: 0.25rem solid transparent;
-  }
-  #mainNav.navbar-shrink .nav-link:hover {
-    color: #ff9076;
-  }
-  #mainNav.navbar-shrink .nav-link:active {
-    color: #ff9076;
-  }
-  #mainNav.navbar-shrink .nav-link.active {
-    color: #ff9076;
-    outline: none;
-    border-bottom: 0.25rem solid #ff9076;
-  }
-
-}
-
 .btn {
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   padding: 1.25rem 2rem;
@@ -11580,47 +11493,19 @@ body {
   width: 100%;
   height: auto;
   min-height: 35rem;
-  padding: 15rem 0;
+  /* padding: 15rem 0; */
+  padding-top:7rem;
   background: linear-gradient(to bottom, rgb(255 254 254 / 0%) 0%, rgb(255 255 255 / 0%) 10%, #fff 90%);
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
 }
-.cabecalho h1, .cabecalho .h1 {
-  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 2.5rem;
-  line-height: 2.5rem;
-  letter-spacing: 0.8rem;
-  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-.cabecalho h2, .cabecalho .h2 {
-  max-width: 20rem;
-  font-size: 1rem;
-}
 @media (min-width: 768px) {
-  .cabecalho h1, .cabecalho .h1 {
-    font-size: 4rem;
-    line-height: 4rem;
-  }
+  
 }
 @media (min-width: 992px) {
-  .cabecalho {
-    height: 100vh;
-    padding: 0;
-  }
-  .cabecalho h1, .cabecalho .h1 {
-    font-size: 6.5rem;
-    line-height: 6.5rem;
-    letter-spacing: 0.8rem;
-  }
-  .cabecalho h2, .cabecalho .h2 {
-    max-width: 30rem;
-    font-size: 1.25rem;
-  }
+ 
 }
 
 .idvisual-section {
@@ -11652,16 +11537,6 @@ body {
   padding: 2rem;
 }
 
-@media (min-width: 992px) {
-  .pacotes-section .featured-text {
-    padding: 0 0 0 2rem;
-    border-left: 0.5rem solid #ff9076;
-  }
-  .redes-section .featured-text {
-    padding: 0 0 0 2rem;
-    border-left: 0.5rem solid #ff9076;
-  }
-}
 .pacotes-section .pacote-text {
   padding: 3rem;
   font-size: 90%;
@@ -11670,25 +11545,7 @@ body {
   padding: 3rem;
   font-size: 90%;
 }
-@media (min-width: 992px) {
-  .pacotes-section .pacote-text {
-    padding: 5rem;
-  }
-  .redes-section .rede-text {
-    padding: 5rem;
-  }
 
-  .pacotes-section .pacote-text hr {
-    border-color: #ff9076;
-    border-width: 0.25rem;
-    width: 30%;
-  }
-  .redes-section .rede-text hr {
-    border-color: #ff9076;
-    border-width: 0.25rem;
-    width: 30%;
-  }
-}
 
 .signup-section {
   padding: 10rem 0;
@@ -11748,4 +11605,32 @@ body {
 
 .footer {
   padding: 5rem 0;
+}
+
+@media (min-width: 992px) {
+  .pacotes-section .featured-text {
+    padding: 0 0 0 2rem;
+    border-left: 0.25rem solid #ff9076;
+  }
+  .redes-section .featured-text {
+    padding: 0 0 0 2rem;
+    border-left: 0.5rem solid #ff9076;
+  }
+  .pacotes-section .pacote-text {
+    padding: 5rem;
+  }
+  .redes-section .rede-text {
+    padding: 5rem;
+  }
+
+  .pacotes-section .pacote-text hr {
+    border-color: #ff9076;
+    border-width: 0.25rem;
+    width: 30%;
+  }
+  .redes-section .rede-text hr {
+    border-color: #ff9076;
+    border-width: 0.25rem;
+    width: 30%;
+  }
 }
