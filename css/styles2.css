@@ -19,20 +19,17 @@
     left: 0;
     border-radius: 0;
 }
-
 ::-webkit-scrollbar-thumb {
     background: #FFA08A;
 }
-
 .cor-text-idvisual{
     color: #FFA08A;
 }
-
-#video video{
-    position: absolute;
+#picture_capa{
+  position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;  
+    z-index: -1; 
 }
 #pacotes{
     background-color: #fff;
@@ -79,12 +76,10 @@
     border-color: #ff9f8a80;
     border-style: solid;
 }
-
 .pacotes-section ul {
     list-style: none;
     padding-left: 1rem;    
 }
-
 .pacotes-section ul li::before {
     content: "\2022";
     color: #ff9076;
@@ -102,10 +97,13 @@
 
 @media (max-width: 576px) {
     #imgApresentacao {
-        width: 80%;
+        width: 60%;
     }
     .borda-circle-img{    
         border-width: 0.1em;
+    }
+    .cabecalho{
+      padding-top: 14rem;
     }
 }
 

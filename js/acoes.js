@@ -1,34 +1,3 @@
-/*************************************************************************
-Adicionando vídeo de exibição ao cabeçalho do site*/
-    let lastScreenWidth = 0;
-    function sizeOfThings(screenWidth){        
-        let video;
-        if(screenWidth < (lastScreenWidth - 50) || screenWidth > (lastScreenWidth + 50)){                    
-            if(screenWidth > 1200){
-                video = 'assets/videos/video_drawbe.mp4';}
-            else
-            {
-                if(screenWidth > 992){
-                    video = 'assets/videos/video_drawbe_tablet.mp4';
-                }
-                else{
-                    video = 'assets/videos/video_drawbe_celular.mp4';
-                }
-            } 
-            $('#video').html(`<video autoplay="" muted="" loop="" width="100%"><source src="${video}" type="video/mp4"></video>`);            
-            lastScreenWidth =  screenWidth;
-        }  
-    };
-    
-    sizeOfThings(screen.width);
-        
-    window.addEventListener('resize', function(){
-        sizeOfThings(screen.width);
-    });
-/*Fim Adicionando vídeo de exibição ao cabeçalho do sit
-**************************************************************************/
-
-
 /* ***********************************************************************
 Início Incluir imagens ao carousel */
     const imagensCarousel = [
