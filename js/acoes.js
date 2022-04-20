@@ -46,11 +46,12 @@ Início Compra Identidade visual */
                 'Logotipo Principal;',
                 'Submarca;',
                 'Ícone;',
-                'Marcas d’água (na cor original da marca, no preto e no branco);',
-                'Paleta de cores e Tipografia;',
+                'Marcas d’água (10 marcas d’água);',
+                'Paleta de cores;',
+                'Tipografia;',
                 'Mockups;',
-                'Pattern (1 formato);',
-                'Documento contendo a identidade visual completa, com conceito da marca e todos os elementos construídos.'
+                'Pattern (2 formatos: pattern do logotipo e do ícone);',
+                'Guia da identidade visual completa, com conceito da marca e todos os elementos construídos.'
             ]
         },
         {
@@ -61,17 +62,17 @@ Início Compra Identidade visual */
             'opcionais': true,
             'adicionais':[
                 'Logotipo Principal;',
-                'Submarca;',
+                'Logotipo alternativo;',
                 'Ícone;',
-                'Marcas d’água (na cor original da marca, no preto e no branco);',
-                'Paleta de cores e Tipografia;',
+                'Marcas d’água (10 marcas d’água);',
+                'Paleta de cores;',
+                'Tipografia;',
                 'Mockups;',
-                'Moodboard;',
-                'Pattern (2 formatos);',
+                'Pattern (2 formatos: pattern do logotipo e do ícone);',
                 'Cartão de Visita Físico;',
                 'Cartão Digital DB Card;',
                 '5 capas para destaques;',
-                'Documento contendo a identidade visual completa, com conceito da marca e todos os elementos construídos.'
+                'Guia da identidade visual completa, com conceito da marca e todos os elementos construídos.'
             ]
         },  
         {
@@ -85,17 +86,16 @@ Início Compra Identidade visual */
                 'Logotipo Alternativo;',
                 'Submarca;',
                 'Ícone;',
-                'Marcas d’água (na cor original da marca, no preto e no branco);',
-                'Paleta de cores e Tipografia;',
+                'Marcas d’água (10 marcas d’água);',
+                'Paleta de cores;',
+                'Tipografia;',
                 'Mockups;',
-                'Moodboard;',
-                'Pattern (2 formatos);',
+                'Pattern (3 formatos: pattern do logotipo principal, logotipo alternativo e do ícone);',
                 'Cartão de Visita Físico;',
                 'Cartão Digital DB Card;',
-                '5 capas para destaques;',
-                'Artes para Papelaria;',
-                'Naming;',
-                'Documento contendo a identidade visual completa, com conceito da marca e todos os elementos construídos.'
+                '10 capas para destaques;',
+                'Artes para Papelaria (papel timbrado, envelope A4, envelope ofício e pasta);',
+                'Guia da identidade visual completa, com conceito da marca e todos os elementos construídos.'
             ]
         },
         {
