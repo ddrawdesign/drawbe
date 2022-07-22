@@ -267,12 +267,15 @@ Início Compra Identidade visual */
 
     //Função responsável por finalizar a compra e enviar a mensagem do pacote escolhido mais opcionais via WhatsApp
     function finalizarCompra(){   
-        var text = `Pacote escolhido: ${compra.pacote.nome} - R$${compra.pacote.valor}; \n`;
+        var pacoteEscolhido = compra.pacote.nome;
+        var valorPacote = compra.pacote.valor;
+        var text = `Pacote escolhido: ${pacoteEscolhido} - R$${valorPacote}; \n`;
         if(compra.opcional.length > 0){
             text += `Opcionais incluidos: \n`
             compra.opcional.forEach(item => {text +=  `* (${item.quant +' '+ item.nome}, valor R$${parseFloat(item.quant) * parseFloat(item.valor)}); \n`});
             text += `Valor total: R$${compra.valorTotal}`;
         }
+        fbq('track', 'Pedido', {pacote: pacoteEscolhido , valor: valorPacote});
         enviarMsgWhatsApp(text);
     }
 
