@@ -286,7 +286,7 @@ Início Compra Identidade visual */
 Enviar mensagem via WhatsApp*/
     function enviarMsgWhatsApp(text){
         const textFormate = window.encodeURIComponent(text);
-        const fone = '5511950509303';
+        const fone = '5515996305201';
         const apiUrl = `https://api.whatsapp.com/send?phone=${fone}&text=${textFormate}`; 
         window.open(apiUrl, "_blank");
     }
